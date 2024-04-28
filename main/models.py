@@ -27,6 +27,14 @@ class New(models.Model):
 
     def __str__(self):
         return self.title
+    
+    @property
+    def images(self):
+        return NewImage.objects.filter(new=self)
+
+    @property
+    def videos(self):
+        return NewVideo.objects.filter(new=self)
 
 
 class NewImage(models.Model):
@@ -41,7 +49,7 @@ class NewVideo(models.Model):
 
 
 class Comment(models.Model):
-    author = models.ForeignKey(User, on_delete=models.CASCADE)
+    new = models.ForeignKey(New, on_delete=models.CASCADE)
     text = models.TextField()
     date = models.DateTimeField(auto_now_add=True)
 

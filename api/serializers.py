@@ -32,14 +32,24 @@ class DetailRegionSerializer(ModelSerializer):
 class ListNewSerializer(ModelSerializer):
     class Meta:
         model = models.New
-        exclude = ['id']
+        fields = '__all__'
+        # exclude = ['id']
+        depth = 1
 
 
 class DetailNewSerializer(ModelSerializer):
     class Meta:
         model = models.New
-        fields = '__all__'
+        fields = ['id', 'title', 'body', 'banner_image', 'author', 'category', 'region', 'date', 'images', 'videos']
+        depth = 1
 
+
+# ----- COMMENT -----
+class ListCommentSerializer(ModelSerializer):
+    class Meta:
+        model = models.Comment
+        fields = ['new', 'text', 'date']
+        depth = 2
 
 
 

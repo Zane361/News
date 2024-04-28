@@ -1,0 +1,61 @@
+<ul class="side-nav">
+
+                        <li class="side-nav-title">Navigation</li>
+
+                        <li class="side-nav-item">
+                            
+                            <li class="side-nav-item">
+                            <a data-bs-toggle="collapse" href="#sidebarDashboards1" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                                <i class="uil-home-alt"></i>
+                                <span> Category </span>
+                            </a>
+                            <div class="collapse" id="sidebarDashboards1">
+                                <ul class="side-nav-second-level">
+                                    <li>
+                                        <a href="{% url 'dashboard:category_create' %}">Create Category</a>
+                                    </li>
+                                    <li>
+                                        <a href="{% url 'dashboard:category_list' %}">Categories List</a>
+                                    </li>
+                                    
+                                </ul>
+                            </div>
+                            </li>
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#sidebarDashboards2" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                                    <i class="uil-home-alt"></i>
+                                    <span> Region </span>
+                                </a>
+                                <div class="collapse" id="sidebarDashboards2">
+                                    <ul class="side-nav-second-level">
+                                        <li>
+                                            <a href="{% url 'dashboard:region_create' %}">Create Region</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'dashboard:region_list' %}">Regions List</a>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                            <li class="side-nav-item">
+                                <a data-bs-toggle="collapse" href="#sidebarDashboards3" aria-expanded="false" aria-controls="sidebarDashboards" class="side-nav-link">
+                                    <i class="uil-home-alt"></i>
+                                    <span> Post </span>
+                                </a>
+                                <div class="collapse" id="sidebarDashboards3">
+                                    <ul class="side-nav-second-level">
+                                        <li>
+                                            <a href="{% url 'dashboard:news_create' %}">Create Post</a>
+                                        </li>
+                                        <li>
+                                            <a href="{% url 'dashboard:news_list' %}">Posts List</a>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                            </li>
+                        </li> 
+                        </li> 
+
+                    </ul>

@@ -3,6 +3,9 @@ from main import models
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
 
+def index(request):
+    return render(request, 'dashboard/index.html')
+
 def log_in(request):
     if request.method == 'POST':
         try:
@@ -11,18 +14,18 @@ def log_in(request):
             user = authenticate(username=username, password=password)
             if user is not None:
                 login(request, user)
-                return redirect(...)
+                return redirect('dashboard:index')
             else:
-                return render(...)
+                return render(request, 'dashboard/auth/login.html')
         except:
-            return redirect(...)
-    return render(request, ...)
+            return redirect('dash')
+    return render(request, 'dashboard/auth/login.html')
 
 def register(request):
     if request.method == 'POST':
         try:
-            f_name = request.POST.get('f_name')
-            l_name = request.POST.get('l_name')
+            f_name = request.POST.get('first_name')
+            l_name = request.POST.get('last_name')
             username = request.POST.get('username')
             password = request.POST.get('password')
             confirm_password = request.POST.get('confirm_password')
@@ -37,8 +40,8 @@ def register(request):
                 login(request, user)
                 return redirect(...)
         except:
-            return redirect(...)
-    return render(request, ...)
+            return redirect('dashboard:register')
+    return render(request, "dashboard/auth/register.html")
 
 @login_required
 def log_out(request):
